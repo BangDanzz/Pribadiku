@@ -1,0 +1,837 @@
+<!doctype html>
+<html
+  lang="en"
+  class=" layout-navbar-fixed layout-menu-fixed layout-compact "
+  dir="ltr"
+  data-skin="default"
+  data-assets-path="/"
+  data-template="vertical-menu-template"
+  data-bs-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+
+    
+      <title>API Hitori | Admin</title>
+    
+
+    
+      <!-- Canonical SEO -->
+      <meta name="description" content="Hitori API" />
+      
+        <meta name="keywords" content="Hitori API" />
+        <meta property="og:title" content="Hitori API" />
+        <meta property="og:type" content="product" />
+        <meta property="og:url" content="#" />
+        <meta property="og:image" content="#" />
+        <meta property="og:description" content="Hitori API" />
+        <meta property="og:site_name" content="Hitori API" />
+        <link rel="canonical" href="/" />
+    
+      <script>
+        (function (w, d, s, l, i) {
+          w[l] = w[l] || [];
+          w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+          var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != 'dataLayer' ? '&l=' + l : '';
+          j.async = true;
+          j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+          f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-5DDHKGP');
+      </script>
+      <!-- End Google Tag Manager -->
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/img/favicon/favicon.ico" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="/vendor/fonts/iconify-icons.css" />
+
+    <!-- Core CSS -->
+    <!-- build:css assets/vendor/css/theme.css  -->
+    
+      
+      <link rel="stylesheet" href="/vendor/libs/pickr/pickr-themes.css" />
+    
+    <link rel="stylesheet" href="/vendor/css/core.css" />
+    <link rel="stylesheet" href="/css/demo.css" />
+
+    
+    <!-- Vendors CSS -->
+    
+      <link rel="stylesheet" href="/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+    
+    <!-- endbuild -->
+
+    <link rel="stylesheet" href="/vendor/libs/datatables-bs5/datatables.bootstrap5.css" />
+  <link rel="stylesheet" href="/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css" />
+  <link rel="stylesheet" href="/vendor/libs/datatables-buttons-bs5/buttons.bootstrap5.css" />
+  <link rel="stylesheet" href="/vendor/libs/animate-css/animate.css" />
+  <link rel="stylesheet" href="/vendor/libs/sweetalert2/sweetalert2.css" />
+  <link rel="stylesheet" href="/vendor/libs/select2/select2.css" />
+  <link rel="stylesheet" href="/vendor/libs/@form-validation/form-validation.css" />
+
+    <!-- Page CSS -->
+    
+
+    <!-- Helpers -->
+    <script src="/vendor/js/helpers.js"></script>
+    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+    
+      <!--? Template customizer: To hide customizer set displayCustomizer value false in config.js.  -->
+      <script src="/vendor/js/template-customizer.js"></script>
+    
+    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+    
+      <script src="/js/config.js"></script>
+    
+  </head>
+
+  <body>
+    
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5DDHKGP" height="0" width="0" style="display: none; visibility: hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+    <!-- Layout wrapper -->
+<div class="layout-wrapper layout-content-navbar  ">
+  <div class="layout-container">
+    
+    
+
+
+
+
+<!-- Menu -->
+
+<aside id="layout-menu" class="layout-menu menu-vertical menu" >
+  
+  <div class="app-brand demo ">
+    <a href="index.html" class="app-brand-link">
+      <span class="app-brand-logo demo">
+</span>
+      <span class="app-brand-text demo menu-text fw-bold ms-2">Hitori API</span>
+    </a>
+
+    <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
+      <i class="icon-base bx bx-chevron-left"></i>
+    </a>
+  </div>
+
+  <div class="menu-inner-shadow"></div>
+
+  
+  
+    <ul class="menu-inner py-1">
+      <!-- Dashboards -->
+      <li class="menu-item">
+        <a href="/dashboard" class="menu-link">
+          <i class="menu-icon icon-base bx bx-home-smile"></i>
+          <div data-i18n="Dashboards">Dashboards</div>
+        </a>
+      </li>
+      <li class="menu-item">
+  <a href="/price" class="menu-link">
+    <span class="menu-icon icon-base bx bx-cart"></span>
+    <div data-i18n="Price">Price</div>
+  </a>
+</li>
+    </ul>
+    
+  
+</aside>
+
+<div class="menu-mobile-toggler d-xl-none rounded-1">
+  <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large text-bg-secondary p-2 rounded-1">
+    <i class="bx bx-menu icon-base"></i>
+    <i class="bx bx-chevron-right icon-base"></i>
+  </a>
+</div>
+<!-- / Menu -->
+
+    
+
+    <!-- Layout container -->
+    <div class="layout-page">
+      
+      
+
+
+
+<!-- Navbar -->
+
+<nav class="layout-navbar container-xxl navbar-detached navbar navbar-expand-xl align-items-center bg-navbar-theme" id="layout-navbar">
+  
+
+
+
+
+  <div class="layout-menu-toggle navbar-nav align-items-xl-center me-4 me-xl-0   d-xl-none ">
+    <a class="nav-item nav-link px-0 me-xl-6" href="javascript:void(0)">
+      <i class="icon-base bx bx-menu icon-md"></i>
+    </a>
+  </div>
+
+
+<div class="navbar-nav-right d-flex align-items-center justify-content-end" id="navbar-collapse">
+  
+    <!-- Search -->
+    <div class="navbar-nav align-items-center">
+      <div class="nav-item navbar-search-wrapper mb-0">
+        <a class="nav-item nav-link search-toggler px-0" href="javascript:void(0);">
+          <span class="d-inline-block text-body-secondary fw-normal" id="autocomplete"></span>
+        </a>
+      </div>
+    </div>
+
+    <!-- /Search -->
+  
+  
+
+  
+
+  <ul class="navbar-nav flex-row align-items-center ms-md-auto">
+    
+        <!-- Style Switcher -->
+        <li class="nav-item dropdown me-2 me-xl-0">
+          <a class="nav-link dropdown-toggle hide-arrow" id="nav-theme" href="javascript:void(0);" data-bs-toggle="dropdown">
+            <i class="icon-base bx bx-sun icon-md theme-icon-active"></i>
+            <span class="d-none ms-2" id="nav-theme-text">theme</span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-theme-text">
+            <li>
+              <button type="button" class="dropdown-item align-items-center" data-bs-theme-value="dark" aria-pressed="true">
+                <span><i class="icon-base bx bx-moon icon-md me-3" data-icon="moon"></i>Dark</span>
+              </button>
+            </li>
+          </ul>
+        </li>
+        <!-- / Style Switcher-->
+
+      <!-- Notification -->
+      <li class="nav-item dropdown-notifications navbar-dropdown dropdown me-3 me-xl-2">
+        <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+          <span class="position-relative">
+            <i class="icon-base bx bx-bell icon-md"></i>
+            <span class="badge rounded-pill bg-danger badge-dot badge-notifications border"></span>
+          </span>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end p-0">
+          <li class="dropdown-menu-header border-bottom">
+            <div class="dropdown-header d-flex align-items-center py-3">
+              <h6 class="mb-0 me-auto">Notification</h6>
+              <div class="d-flex align-items-center h6 mb-0">
+                <span class="badge bg-label-primary me-2">3 New</span>
+                <a href="javascript:void(0)" class="dropdown-notifications-all p-2" data-bs-toggle="tooltip" data-bs-placement="top" title="Mark all as read"><i class="icon-base bx bx-envelope-open text-heading"></i></a>
+              </div>
+            </div>
+          </li>
+          <li class="dropdown-notifications-list scrollable-container">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item list-group-item-action dropdown-notifications-item">
+                <div class="d-flex">
+                  <div class="flex-shrink-0 me-3">
+                    <div class="avatar">
+                      <img src="/img/avatars/1.png" alt class="rounded-circle" />
+                    </div>
+                  </div>
+                  <div class="flex-grow-1">
+                    <h6 class="small mb-0">Congratulation Lettie 🎉</h6>
+                    <small class="mb-1 d-block text-body">Won the monthly best seller gold badge</small>
+                    <small class="text-body-secondary">1h ago</small>
+                  </div>
+                  <div class="flex-shrink-0 dropdown-notifications-actions">
+                    <a href="javascript:void(0)" class="dropdown-notifications-read"><span class="badge badge-dot"></span></a>
+                    <a href="javascript:void(0)" class="dropdown-notifications-archive"><span class="icon-base bx bx-x"></span></a>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item list-group-item-action dropdown-notifications-item">
+                <div class="d-flex">
+                  <div class="flex-shrink-0 me-3">
+                    <div class="avatar">
+                      <span class="avatar-initial rounded-circle bg-label-danger">CF</span>
+                    </div>
+                  </div>
+                  <div class="flex-grow-1">
+                    <h6 class="small mb-0">Charles Franklin</h6>
+                    <small class="mb-1 d-block text-body">Accepted your connection</small>
+                    <small class="text-body-secondary">12hr ago</small>
+                  </div>
+                  <div class="flex-shrink-0 dropdown-notifications-actions">
+                    <a href="javascript:void(0)" class="dropdown-notifications-read"><span class="badge badge-dot"></span></a>
+                    <a href="javascript:void(0)" class="dropdown-notifications-archive"><span class="icon-base bx bx-x"></span></a>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item list-group-item-action dropdown-notifications-item marked-as-read">
+                <div class="d-flex">
+                  <div class="flex-shrink-0 me-3">
+                    <div class="avatar">
+                      <img src="/img/avatars/2.png" alt class="rounded-circle" />
+                    </div>
+                  </div>
+                  <div class="flex-grow-1">
+                    <h6 class="small mb-0">New Message ✉️</h6>
+                    <small class="mb-1 d-block text-body">You have new message from Natalie</small>
+                    <small class="text-body-secondary">1h ago</small>
+                  </div>
+                  <div class="flex-shrink-0 dropdown-notifications-actions">
+                    <a href="javascript:void(0)" class="dropdown-notifications-read"><span class="badge badge-dot"></span></a>
+                    <a href="javascript:void(0)" class="dropdown-notifications-archive"><span class="icon-base bx bx-x"></span></a>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="border-top">
+            <div class="d-grid p-4">
+              <a class="btn btn-primary btn-sm d-flex" href="javascript:void(0);">
+                <small class="align-middle">View all notifications</small>
+              </a>
+            </div>
+          </li>
+        </ul>
+      </li>
+      <!--/ Notification -->
+      <!-- User -->
+      <li class="nav-item navbar-dropdown dropdown-user dropdown">
+        <a class="nav-link dropdown-toggle hide-arrow p-0" href="javascript:void(0);" data-bs-toggle="dropdown">
+          <div class="avatar avatar-online">
+            <img src="/img/avatars/1.png" alt class="rounded-circle" />
+          </div>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li>
+            <a class="dropdown-item" href="pages-account-settings-account.html">
+              <div class="d-flex">
+                <div class="flex-shrink-0 me-3">
+                  <div class="avatar avatar-online">
+                    <img src="/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                  </div>
+                </div>
+                <div class="flex-grow-1">
+                  <h6 class="mb-0"><%= user.username %></h6>
+                  <small class="text-body-secondary">Admin</small>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <div class="dropdown-divider my-1"></div>
+          </li>
+          <li>
+            <a class="dropdown-item" href="/profile"> <i class="icon-base bx bx-user icon-md me-3"></i><span>My Profile</span> </a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="auth-login-cover.html" target="_blank"> <i class="icon-base bx bx-power-off icon-md me-3"></i><span>Log Out</span> </a>
+          </li>
+        </ul>
+      </li>
+      <!--/ User -->
+    
+  </ul>
+</div>
+
+</nav>
+
+<!-- / Navbar -->
+      
+
+      <!-- Content wrapper -->
+      <div class="content-wrapper">
+      <div class="container-xxl flex-grow-1 container-p-y">
+        <!-- Content -->
+        <div class="row">
+        <div class="col-12 col-xl-12 stretch-card">
+          <div class="row flex-grow-1">
+            
+            <!-- Select Action -->
+            <div class="col-md-4 grid-margin stretch-card" id="homeadmin">
+              <div class="card">
+                <div class="card-header">
+                  <h4 class="card-title">List Admin Page</h4>
+                </div>
+                <div class="card-body">
+                  <div class="basic-form">
+                    <form>
+                      <div class="form-group mb-4">
+                        <select id="actionSelect" class="form-control default-select form-control-sm">
+                          <option selected>Select Here</option>
+                          <option value="addVip">Add VIP</option>
+                          <option value="addPrem">Add Premium</option>
+                          <option value="delUser">Delete Users</option>
+                          <option value="delPrem">Delete Role</option>
+                          <option value="listPrem">List Premium</option>
+                          <option value="redeemPrem">Add Redeem Code</option>
+                          <option value="redeemPremDel">Delete Redeem Code</option>
+                          <option value="banIp">Ban / Unban IP</option>
+                        </select>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- BAN / UNBAN IP -->
+<div class="col-md-6 grid-margin stretch-card">
+  <div class="card" id="banip" style="display: none;">
+    <a href="#" class="btn btn-transparent position-absolute start-0 top-0 mt-3 ms-3"
+       onclick="showCard('homeadmin')">
+      <i class="fas fa-arrow-left"></i>
+    </a>
+    <div class="card-body">
+      <h5 class="text-center mb-3">Manage Banned IP</h5>
+
+      <!-- Form Ban IP -->
+      <form action="/admin/ban-ip" method="POST" class="mb-4">
+        <div class="form-group mb-3">
+          <input type="text" name="apikey" class="form-control" required placeholder="Masukkan API Key">
+        </div>
+        <div class="form-group mb-3">
+          <input type="text" name="ip" class="form-control" required placeholder="Masukkan IP untuk dibanned">
+        </div>
+        <div class="form-group mb-3">
+                      <input type="text" name="token" class="form-control" required placeholder="Token">
+                    </div>
+        <div class="form-group text-center mb-3">
+          <button type="submit" class="btn btn-danger btn-block">Ban IP</button>
+        </div>
+      </form>
+
+      <!-- Form Unban IP -->
+      <form action="/admin/unban-ip" method="POST">
+        <div class="form-group mb-3">
+          <input type="text" name="apikey" class="form-control" required placeholder="Masukkan API Key">
+        </div>
+        <div class="form-group mb-3">
+          <input type="text" name="ip" class="form-control" required placeholder="Masukkan IP untuk di-unban">
+        </div>
+        <div class="form-group mb-3">
+                      <input type="text" name="token" class="form-control" required placeholder="Token">
+                    </div>
+        <div class="form-group text-center mb-3">
+          <button type="submit" class="btn btn-success btn-block">Unban IP</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+            <!-- ADD VIP -->
+            <div class="col-md-4 grid-margin stretch-card">
+              <div class="card" id="addvip" style="display: none;">
+                <a href="#" class="btn btn-transparent position-absolute start-0 top-0 mt-3 ms-3" onclick="showCard('homeadmin')">
+                  <i class="fas fa-arrow-left"></i>
+                </a>
+                <div class="card-body text-center">
+                  <h5 class="text-center mb-3">ADD VIP</h5>
+                  <form action="/admin/vip/add" method="POST">
+                    <div class="form-group mb-3 text-center">
+                      <input type="text" name="username" class="form-control" required placeholder="Please Enter Username">
+                    </div>
+                    <div class="form-group mb-3">
+                      <input type="text" name="days" class="form-control" required placeholder="Please Enter The Number To Days">
+                    </div>
+                    <div class="form-group mb-3">
+                      <input type="text" name="seconds" class="form-control" required placeholder="Please Enter The Number To Seconds">
+                    </div>
+                    <div class="form-group mb-3">
+                      <input type="text" name="token" class="form-control" required placeholder="Token">
+                    </div>
+                    <div class="form-group mb-3 text-center">
+                      <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <!-- ADD PREMIUM -->
+            <div class="col-md-4 grid-margin stretch-card">
+              <div class="card" id="addprem" style="display: none;">
+                <a href="#" class="btn btn-transparent position-absolute start-0 top-0 mt-3 ms-3" onclick="showCard('homeadmin')">
+                  <i class="fas fa-arrow-left"></i>
+                </a>
+                <div class="card-body text-center">
+                  <h5 class="text-center mb-3">ADD PREMIUM</h5>
+                  <form action="/admin/premium/add" method="POST">
+                    <div class="form-group mb-3">
+                      <input type="text" name="username" class="form-control" required placeholder="Please Enter Username">
+                    </div>
+                    <div class="form-group mb-3">
+                      <input type="text" name="days" class="form-control" required placeholder="Please Enter The Number To Days">
+                    </div>
+                    <div class="form-group mb-3">
+                      <input type="text" name="token" class="form-control" required placeholder="Token">
+                    </div>
+                    <div class="form-group mb-3 text-center">
+                      <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <!-- LIST PREMIUM -->
+            <div class="col-md-6 grid-margin stretch-card">
+              <div class="card" id="listprem" style="display: none;">
+                <div class="card-body">
+                  <h6 class="card-title mb-2">LIST Premium/VIP USERS</h6>
+                  <div class="d-flex flex-column" id="premiumList"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- DELETE PREMIUM -->
+            <div class="col-md-4 grid-margin stretch-card">
+              <div class="card" id="delprem" style="display: none;">
+                <a href="#" class="btn btn-transparent position-absolute start-0 top-0 mt-3 ms-3" onclick="showCard('homeadmin')">
+                  <i class="fas fa-arrow-left"></i>
+                </a>
+                <div class="card-body">
+                  <h5 class="text-center mb-3">DELETE PREMIUM</h5>
+                  <form action="/admin/premium/delete" method="POST">
+                    <div class="form-group mb-3">
+                      <input type="text" name="username" class="form-control" required placeholder="Masukkan User Name">
+                    </div>
+                    <div class="form-group mb-3">
+                      <input type="text" name="token" class="form-control" required placeholder="Masukkan Token">
+                    </div>
+                    <div class="form-group text-center mb-3">
+                      <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <!-- DELETE USERS -->
+            <div class="col-md-4 grid-margin stretch-card">
+              <div class="card" id="deluser" style="display: none;">
+                <a href="#" class="btn btn-transparent position-absolute start-0 top-0 mt-3 ms-3" onclick="showCard('homeadmin')">
+                  <i class="fas fa-arrow-left"></i>
+                </a>
+                <div class="card-body">
+                  <h5 class="text-center mb-3">DELETE USERS</h5>
+                  <form action="/admin/users/delete-user" method="POST">
+                    <div class="form-group mb-3">
+                      <input type="text" name="username" class="form-control" required placeholder="Masukkan User Name">
+                    </div>
+                    <div class="form-group mb-3">
+                      <input type="text" name="token" class="form-control" required placeholder="Masukkan Token">
+                    </div>
+                    <div class="form-group text-center mb-3">
+                      <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <!-- ADD REDEEM CODE -->
+            <div class="col-md-4 grid-margin stretch-card">
+              <div class="card" id="redeemprem" style="display: none;">
+                <a href="#" class="btn btn-transparent position-absolute start-0 top-0 mt-3 ms-3" onclick="showCard('homeadmin')">
+                  <i class="fas fa-arrow-left"></i>
+                </a>
+                <div class="card-body">
+                  <h5 class="text-center mb-3">ADD REDEEM CODE</h5>
+                  <form action="/admin/add-redeem" method="POST">
+                    <div class="form-group mb-3">
+                      <input type="text" name="code" class="form-control" required placeholder="Enter Kode Reedem Baru">
+                    </div>
+                    <div class="form-group mb-3">
+                      <input type="number" name="limit" class="form-control" required placeholder="Enter Limit">
+                    </div>
+                    <div class="form-group mb-3">
+                      <input type="number" name="maxUsage" class="form-control" required placeholder="Enter Max Usage">
+                    </div>
+                    <div class="form-group mb-3">
+                      <input type="date" name="expiryDate" class="form-control" required>
+                    </div>
+                    <div class="form-group mb-3">
+                      <input type="text" name="token" class="form-control" required placeholder="Enter Token">
+                    </div>
+                    <div class="form-group text-center mb-3">
+                      <button type="submit" class="btn btn-primary btn-block">Add Redeem Code</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <!-- DELETE REDEEM CODE -->
+            <div class="col-md-4 grid-margin stretch-card">
+              <div class="card" id="redeempremdel" style="display: none;">
+                <a href="#" class="btn btn-transparent position-absolute start-0 top-0 mt-3 ms-3" onclick="showCard('homeadmin')">
+                  <i class="fas fa-arrow-left"></i>
+                </a>
+                <div class="card-body">
+                  <h5 class="text-center mb-3">DELETE REDEEM CODE</h5>
+                  <form action="/admin/delete/reedem-code" method="POST">
+                    <div class="form-group mb-3">
+                      <input type="text" name="redeemcode" class="form-control" required placeholder="Enter Kode Redeem">
+                    </div>
+                    <div class="form-group mb-3">
+                      <input type="text" name="token" class="form-control" required placeholder="Enter Token">
+                    </div>
+                    <div class="form-group text-center mb-3">
+                      <button type="submit" class="btn btn-primary btn-block">Delete Redeem Code</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>      
+    </div>
+  </div>
+ </div>
+</div>
+
+<!-- SCRIPT -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const selectElement = document.getElementById('actionSelect');
+
+  function toggleSections() {
+    const sections = [
+      'addprem', 'addvip', 'delprem', 'deluser',
+      'listprem', 'redeemprem', 'redeempremdel', 'banip'
+    ];
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.style.display = 'none';
+    });
+
+    if (selectElement.value === 'addVip') 
+      document.getElementById('addvip').style.display = 'block';
+    else if (selectElement.value === 'addPrem') 
+      document.getElementById('addprem').style.display = 'block';
+    else if (selectElement.value === 'delPrem') 
+      document.getElementById('delprem').style.display = 'block';
+    else if (selectElement.value === 'delUser') 
+      document.getElementById('deluser').style.display = 'block';
+    else if (selectElement.value === 'listPrem') 
+      document.getElementById('listprem').style.display = 'block';
+    else if (selectElement.value === 'redeemPrem') 
+      document.getElementById('redeemprem').style.display = 'block';
+    else if (selectElement.value === 'redeemPremDel') 
+      document.getElementById('redeempremdel').style.display = 'block';
+    else if (selectElement.value === 'banIp') 
+      document.getElementById('banip').style.display = 'block';
+  }
+
+  function timer(milliseconds) {
+    const days = Math.floor(milliseconds / (24*60*60*1000));
+    const hours = Math.floor((milliseconds % (24*60*60*1000)) / (60*60*1000));
+    const minutes = Math.floor((milliseconds % (60*60*1000)) / (60*1000));
+    return `${days} Days ${hours} Hours ${minutes} Minutes`;
+  }
+
+  function fetchPremiumUsers() {
+    $.ajax({
+      url: '/admin/premium/list',
+      method: 'GET',
+      dataType: 'json',
+      success: function(data) {
+        const premiumList = document.getElementById('premiumList');
+        premiumList.innerHTML = '';
+        data.forEach(user => {
+          const prof = user.profile;
+          const role = user.role;
+          const userItem = document.createElement('div');
+          userItem.innerHTML = `
+            <a class="d-flex align-items-center border-bottom py-3">
+              <div class="me-3"><img src="${prof}" class="rounded-circle wd-35" alt="user"></div>
+              <div class="w-100">
+                <div class="d-flex justify-content-between">
+                  <h6 class="text-body mb-2">${user.name}</h6>
+                  <p class="text-muted tx-12">${role}</p>
+                </div>
+                <p class="text-muted tx-13">${timer(user.expired)} - ${user.role === "VIP" ? "Unlimited" : user.limit} Limit</p> 
+              </div>
+            </a>
+          `;
+          premiumList.appendChild(userItem);
+        });
+      },
+      error: function(error) {
+        console.error('Error fetching premium users:', error);
+      }
+    });
+  }
+
+  selectElement.addEventListener('change', toggleSections);
+  toggleSections();
+  fetchPremiumUsers();
+});
+</script>
+      
+        </div>
+        <!-- / Content -->
+
+        
+        
+
+<!-- Footer -->
+<footer class="content-footer footer bg-footer-theme">
+  <div class="container-xxl">
+    <div class="footer-container d-flex align-items-center justify-content-between py-4 flex-md-row flex-column">
+      <div class="mb-2 mb-md-0">
+        ©
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+        , made with ❤️ by <a href="#" target="_blank" class="footer-link">Hitori</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- / Footer -->
+
+        
+        <div class="content-backdrop fade"></div>
+      </div>
+      <!-- Content wrapper -->
+    </div>
+    <!-- / Layout page -->
+  </div>
+
+  
+  
+  <!-- Overlay -->
+  <div class="layout-overlay layout-menu-toggle"></div>
+  
+  
+  <!-- Drag Target Area To SlideIn Menu On Small Screens -->
+  <div class="drag-target"></div>
+  
+</div>
+<!-- / Layout wrapper -->
+
+    <!-- Core JS -->
+    <!-- build:js assets/vendor/js/theme.js  -->
+    
+    
+      <script src="/vendor/libs/jquery/jquery.js"></script>
+    
+    <script src="/vendor/libs/popper/popper.js"></script>
+    <script src="/vendor/js/bootstrap.js"></script>
+    <script src="/vendor/libs/@algolia/autocomplete-js.js"></script>
+
+    
+      
+      <script src="/vendor/libs/pickr/pickr.js"></script>
+    
+    <script>
+  // Change Apikey
+  document.getElementById("changeApikeyForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const apikey = document.getElementById("apikey").value.trim();
+
+    if(!apikey) return alert("Apikey cannot be empty");
+
+    try {
+      const res = await fetch("/profile/change-apikey", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ apikey })
+      });
+      const data = await res.json();
+      alert(data.message);
+    } catch (err) {
+      alert("Error: " + err.message);
+    }
+  });
+
+  // Change Password
+  document.getElementById("changePasswordForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const currentPassword = document.getElementById("currentPassword").value;
+    const newPassword = document.getElementById("newPassword").value;
+
+    if(!currentPassword || !newPassword) return alert("All fields are required");
+
+    try {
+      const res = await fetch("/profile/change-password", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ currentPassword, newPassword })
+      });
+      const data = await res.json();
+      alert(data.message);
+    } catch (err) {
+      alert("Error: " + err.message);
+    }
+  });
+
+  // Delete Account
+  document.getElementById("deleteAccountForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    if(!confirm("Are you sure you want to delete your account?")) return;
+
+    try {
+      const res = await fetch("/profile/delete-account", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" }
+      });
+      const data = await res.json();
+      alert(data.message);
+      if(data.success) window.location.href = "/logout";
+    } catch (err) {
+      alert("Error: " + err.message);
+    }
+  });
+</script>
+
+<script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+
+    
+      <script src="/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+      
+        
+        <script src="/vendor/libs/hammer/hammer.js"></script>
+        
+          <script src="/vendor/libs/i18n/i18n.js"></script>
+        
+      
+      <script src="/vendor/js/menu.js"></script>
+    
+    <!-- endbuild -->
+
+    <!-- Vendors JS -->
+    <script src="/vendor/libs/moment/moment.js"></script>
+  <script src="/vendor/libs/datatables-bs5/datatables-bootstrap5.js"></script>
+  <script src="/vendor/libs/sweetalert2/sweetalert2.js"></script>
+  <script src="/vendor/libs/cleave-zen/cleave-zen.js"></script>
+  <script src="/vendor/libs/select2/select2.js"></script>
+  <script src="/vendor/libs/@form-validation/popular.js"></script>
+  <script src="/vendor/libs/@form-validation/bootstrap5.js"></script>
+  <script src="/vendor/libs/@form-validation/auto-focus.js"></script>
+
+    <!-- Main JS -->
+    
+      <script src="/js/main.js"></script>
+    
+
+    <!-- Page JS -->
+    <script src="/js/modal-edit-user.js"></script>
+  <script src="/js/app-user-view.js"></script>
+  <script src="/js/app-user-view-account.js"></script>
+    
+  </body>
+</html>
+
+  <!-- beautify ignore:end -->
+

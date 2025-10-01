@@ -1,0 +1,468 @@
+{
+    "changelog": [
+        {
+            "endpoint": "/api/ai/gpt5",
+            "timestamp": "Sep 18, 2025, 11:58:38 PM GMT+8"
+        },
+        {
+            "endpoint": "/api/ai/openaigpt5",
+            "timestamp": "Sep 18, 2025, 08:25:22 PM GMT+8"
+        },
+        {
+            "endpoint": "/api/tools/pptiktok",
+            "timestamp": "Sep 18, 2025, 03:22:50 AM GMT+8"
+        },
+        {
+            "endpoint": "/api/stalk/ytuser",
+            "timestamp": "Sep 18, 2025, 03:07:14 AM GMT+8"
+        },
+        {
+            "endpoint": "/api/tools/ppfb",
+            "timestamp": "Sep 18, 2025, 03:05:46 AM GMT+8"
+        },
+        {
+            "endpoint": "/api/download/youtubemp3",
+            "timestamp": "Sep 17, 2025, 03:51:50 AM GMT+8"
+        },
+        {
+            "endpoint": "/api/search/amazon",
+            "timestamp": "Nov 05, 2024, 09:57:34 AM GMT+7"
+        },
+        {
+            "endpoint": "/api/search/tokopedia",
+            "timestamp": "Nov 05, 2024, 09:57:34 AM GMT+7"
+        },
+        {
+            "endpoint": "/api/stalk/soundcloud",
+            "timestamp": "Nov 04, 2024, 03:57:04 PM GMT+7"
+        },
+        {
+            "endpoint": "/api/search/olx",
+            "timestamp": "Nov 04, 2024, 03:57:04 PM GMT+7"
+        },
+        {
+            "endpoint": "/api/search/vehicle",
+            "timestamp": "Nov 04, 2024, 03:57:04 PM GMT+7"
+        },
+        {
+            "endpoint": "/api/search/manga",
+            "timestamp": "Nov 04, 2024, 03:57:04 PM GMT+7"
+        },
+        {
+            "endpoint": "/api/download/kwai",
+            "timestamp": "Nov 04, 2024, 03:57:04 PM GMT+7"
+        },
+        {
+            "endpoint": "/api/download/smule",
+            "timestamp": "Nov 04, 2024, 03:57:04 PM GMT+7"
+        },
+        {
+            "endpoint": "/api/billpln",
+            "timestamp": "Nov 04, 2024, 03:57:04 PM GMT+7"
+        },
+        {
+            "endpoint": "/api/download/instagram",
+            "timestamp": "Nov 03, 2024, 03:23:48 PM GMT+7"
+        },
+        {
+            "endpoint": "/api/search/bacaresep",
+            "timestamp": "Nov 03, 2024, 12:28:14 AM GMT+7"
+        },
+        {
+            "endpoint": "/api/search/resep",
+            "timestamp": "Nov 03, 2024, 12:28:14 AM GMT+7"
+        },
+        {
+            "endpoint": "/api/tools/whatsapp",
+            "timestamp": "Nov 02, 2024, 09:41:45 AM GMT+7"
+        },
+        {
+            "endpoint": "/api/search/steam",
+            "timestamp": "Nov 01, 2024, 02:29:39 PM GMT+7"
+        },
+        {
+            "endpoint": "/api/search/steamdetail",
+            "timestamp": "Nov 01, 2024, 01:13:36 PM GMT+7"
+        },
+        {
+            "endpoint": "/api/download/fbstories",
+            "timestamp": "Nov 01, 2024, 12:33:21 AM GMT+7"
+        },
+        {
+            "endpoint": "/api/ppfb",
+            "timestamp": "Oct 30, 2024, 12:12:26 AM GMT+7"
+        },
+        {
+            "endpoint": "/api/download/instahigh",
+            "timestamp": "Oct 28, 2024, 04:32:46 AM GMT+7"
+        },
+        {
+            "endpoint": "/api/search/shortsyt",
+            "timestamp": "Oct 27, 2024, 04:14:30 AM GMT+7"
+        },
+        {
+            "endpoint": "/api/search/genshin",
+            "timestamp": "Oct 24, 2024, 07:33:23 PM GMT+7"
+        },
+        {
+            "endpoint": "/api/download/facebook",
+            "timestamp": "Oct 24, 2024, 07:11:14 PM GMT+7"
+        },
+        {
+            "endpoint": "/api/download/wkkwwkbssh",
+            "timestamp": "Oct 24, 2024, 07:11:14 PM GMT+7"
+        },
+        {
+            "endpoint": "/api/search/bukalapak",
+            "timestamp": "Oct 24, 2024, 01:27:25 AM GMT+7"
+        },
+        {
+            "endpoint": "/api/download/reddit",
+            "timestamp": "Oct 24, 2024, 01:27:25 AM GMT+7"
+        },
+        {
+            "endpoint": "/api/search/wikimedia",
+            "timestamp": "Oct 23, 2024, 08:50:50 PM GMT+7"
+        },
+        {
+            "endpoint": "/api/download/trendyt",
+            "timestamp": "Oct 23, 2024, 04:43:20 AM GMT+7"
+        },
+        {
+            "endpoint": "/api/download/ytsearch",
+            "timestamp": "Oct 23, 2024, 04:43:20 AM GMT+7"
+        },
+        {
+            "endpoint": "/api/download/youtube",
+            "timestamp": "Oct 23, 2024, 04:43:20 AM GMT+7"
+        },
+        {
+            "endpoint": "/api/search/lazada",
+            "timestamp": "Oct 21, 2024, 02:18:10 AM GMT+7"
+        },
+        {
+            "endpoint": "/api/search/shopee",
+            "timestamp": "Oct 20, 2024, 11:46:17 PM GMT+7"
+        },
+        {
+            "endpoint": "/api/tools/agedetection",
+            "timestamp": "Oct 13, 2024, 10:29:30 AM GMT+8"
+        },
+        {
+            "endpoint": "/api/tools/roboguru",
+            "timestamp": "Oct 13, 2024, 09:41:49 AM GMT+8"
+        },
+        {
+            "endpoint": "/api/download/trenyt",
+            "timestamp": "Oct 13, 2024, 09:41:49 AM GMT+8"
+        },
+        {
+            "endpoint": "/api/download/agedetection",
+            "timestamp": "Oct 12, 2024, 12:46:03 AM GMT+8"
+        },
+        {
+            "endpoint": "/api/search/billpln",
+            "timestamp": "Oct 12, 2024, 12:10:22 AM GMT+8"
+        },
+        {
+            "endpoint": "/api/stalk/ipaddress",
+            "timestamp": "Oct 11, 2024, 01:11:47 PM GMT+8"
+        },
+        {
+            "endpoint": "/api/stalk/instagram",
+            "timestamp": "Oct 11, 2024, 12:53:55 PM GMT+8"
+        },
+        {
+            "endpoint": "/api/stalk/yt",
+            "timestamp": "Oct 11, 2024, 12:14:27 PM GMT+8"
+        },
+        {
+            "endpoint": "/api/stalk/tiktok",
+            "timestamp": "Oct 11, 2024, 12:08:07 PM GMT+8"
+        },
+        {
+            "endpoint": "/api/pptiktok",
+            "timestamp": "Oct 11, 2024, 12:08:07 PM GMT+8"
+        },
+        {
+            "endpoint": "/api/download/pptiktok",
+            "timestamp": "Oct 09, 2024, 08:01:59 PM GMT+8"
+        },
+        {
+            "endpoint": "/api/download/terabox",
+            "timestamp": "Oct 09, 2024, 05:35:49 PM GMT+8"
+        },
+        {
+            "endpoint": "/api/download/brainly",
+            "timestamp": "Oct 09, 2024, 03:03:22 PM GMT+8"
+        },
+        {
+            "endpoint": "/api/download/ephoto",
+            "timestamp": "Oct 06, 2024, 12:14:10 PM GMT+8"
+        },
+        {
+            "endpoint": "/api/download/musically",
+            "timestamp": "Oct 05, 2024, 05:35:24 PM GMT+8"
+        },
+        {
+            "endpoint": "/api/download/twitter",
+            "timestamp": "Oct 05, 2024, 04:02:22 PM GMT+8"
+        },
+        {
+            "endpoint": "/api/download/douyin",
+            "timestamp": "Oct 05, 2024, 03:54:09 PM GMT+8"
+        },
+        {
+            "endpoint": "/api/download/tiktok3",
+            "timestamp": "Oct 05, 2024, 04:47:25 AM GMT+8"
+        },
+        {
+            "endpoint": "/api/download/tiktok2",
+            "timestamp": "Oct 03, 2024, 02:57:06 AM GMT+8"
+        },
+        {
+            "endpoint": "/api/download/kraken",
+            "timestamp": "Sep 25, 2024, 11:41:36 PM GMT+8"
+        },
+        {
+            "endpoint": "/api/download/tiktok",
+            "timestamp": "Sep 25, 2024, 11:41:36 PM GMT+8"
+        },
+        {
+            "endpoint": "/api/tiktok/download",
+            "timestamp": "Sep 25, 2024, 11:41:36 PM GMT+8"
+        },
+        {
+            "endpoint": "/api/download/ttslide",
+            "timestamp": "Sep 25, 2024, 11:41:36 PM GMT+8"
+        },
+        {
+            "endpoint": "/api/download/threads",
+            "timestamp": "Sep 25, 2024, 11:41:36 PM GMT+8"
+        },
+        {
+            "endpoint": "/ai/claude/create",
+            "timestamp": "Feb 13, 2024, 12:25:41 AM UTC"
+        },
+        {
+            "endpoint": "/ai/claude/chat",
+            "timestamp": "Feb 13, 2024, 12:22:25 AM UTC"
+        },
+        {
+            "endpoint": "/ai/claude/crate",
+            "timestamp": "Feb 13, 2024, 12:22:25 AM UTC"
+        },
+        {
+            "endpoint": "/ai/gfpgan",
+            "timestamp": "Feb 12, 2024, 07:14:56 AM UTC"
+        },
+        {
+            "endpoint": "/download/spotify",
+            "timestamp": "Feb 10, 2024, 08:35:41 AM UTC"
+        },
+        {
+            "endpoint": "/ai/perplexity",
+            "timestamp": "Feb 06, 2024, 04:21:00 PM UTC"
+        },
+        {
+            "endpoint": "/stalk/genshin",
+            "timestamp": "Jan 23, 2024, 04:20:52 PM UTC"
+        },
+        {
+            "endpoint": "/stalk/mobilelegends",
+            "timestamp": "Jan 23, 2024, 04:20:52 PM UTC"
+        },
+        {
+            "endpoint": "/stalk/freefire",
+            "timestamp": "Jan 23, 2024, 04:20:52 PM UTC"
+        },
+        {
+            "endpoint": "/stalk/npm",
+            "timestamp": "Jan 23, 2024, 04:20:52 PM UTC"
+        },
+        {
+            "endpoint": "/stalk/twetter",
+            "timestamp": "Jan 23, 2024, 04:20:52 PM UTC"
+        },
+        {
+            "endpoint": "/stalk/github",
+            "timestamp": "Jan 23, 2024, 04:20:52 PM UTC"
+        },
+        {
+            "endpoint": "/stalk/tiktok",
+            "timestamp": "Jan 23, 2024, 04:20:52 PM UTC"
+        },
+        {
+            "endpoint": "/stalk/instagram",
+            "timestamp": "Jan 23, 2024, 04:20:52 PM UTC"
+        },
+        {
+            "endpoint": "/download/xnxx",
+            "timestamp": "Jan 23, 2024, 04:20:52 PM UTC"
+        },
+        {
+            "endpoint": "/download/terabox",
+            "timestamp": "Jan 23, 2024, 04:20:52 PM UTC"
+        },
+        {
+            "endpoint": "/youtube/mp4",
+            "timestamp": "Jan 23, 2024, 04:20:52 PM UTC"
+        },
+        {
+            "endpoint": "/youtube/mp3",
+            "timestamp": "Jan 23, 2024, 04:20:52 PM UTC"
+        },
+        {
+            "endpoint": "/download/ytplayvid",
+            "timestamp": "Jan 23, 2024, 04:20:52 PM UTC"
+        },
+        {
+            "endpoint": "/download/ytplay",
+            "timestamp": "Jan 23, 2024, 04:20:52 PM UTC"
+        },
+        {
+            "endpoint": "/download/ytmp3",
+            "timestamp": "Jan 23, 2024, 04:20:52 PM UTC"
+        },
+        {
+            "endpoint": "/download/ytmp4",
+            "timestamp": "Jan 23, 2024, 04:20:52 PM UTC"
+        },
+        {
+            "endpoint": "/download/youtube",
+            "timestamp": "Jan 23, 2024, 04:20:52 PM UTC"
+        },
+        {
+            "endpoint": "/download/douyin",
+            "timestamp": "Jan 23, 2024, 04:20:52 PM UTC"
+        },
+        {
+            "endpoint": "/download/krakenfiles",
+            "timestamp": "Jan 23, 2024, 04:20:52 PM UTC"
+        },
+        {
+            "endpoint": "/download/gdrivedl",
+            "timestamp": "Jan 23, 2024, 04:20:52 PM UTC"
+        },
+        {
+            "endpoint": "/download/sfiledown",
+            "timestamp": "Jan 23, 2024, 04:20:52 PM UTC"
+        },
+        {
+            "endpoint": "/download/capcut",
+            "timestamp": "Jan 23, 2024, 04:20:52 PM UTC"
+        },
+        {
+            "endpoint": "/download/cocofun",
+            "timestamp": "Jan 23, 2024, 04:20:52 PM UTC"
+        },
+        {
+            "endpoint": "/download/like",
+            "timestamp": "Jan 23, 2024, 04:20:52 PM UTC"
+        },
+        {
+            "endpoint": "/download/snackvideo",
+            "timestamp": "Jan 23, 2024, 04:20:52 PM UTC"
+        },
+        {
+            "endpoint": "/download/pinterest",
+            "timestamp": "Jan 23, 2024, 04:20:52 PM UTC"
+        },
+        {
+            "endpoint": "/download/facebook",
+            "timestamp": "Jan 23, 2024, 04:20:52 PM UTC"
+        },
+        {
+            "endpoint": "/download/instagram",
+            "timestamp": "Jan 23, 2024, 04:20:52 PM UTC"
+        },
+        {
+            "endpoint": "/download/tiktok",
+            "timestamp": "Jan 23, 2024, 04:20:52 PM UTC"
+        },
+        {
+            "endpoint": "/ai/img2img",
+            "timestamp": "Jan 23, 2024, 04:20:52 PM UTC"
+        },
+        {
+            "endpoint": "/ai/txt2img",
+            "timestamp": "Jan 23, 2024, 04:20:52 PM UTC"
+        },
+        {
+            "endpoint": "/ai/upscale",
+            "timestamp": "Jan 23, 2024, 04:20:52 PM UTC"
+        },
+        {
+            "endpoint": "/ai/upscale",
+            "timestamp": "Jan 23, 2024, 04:20:52 PM UTC"
+        },
+        {
+            "endpoint": "/ai/you",
+            "timestamp": "Jan 23, 2024, 04:20:52 PM UTC"
+        },
+        {
+            "endpoint": "/ai/cai/createChat",
+            "timestamp": "Jan 23, 2024, 04:20:52 PM UTC"
+        },
+        {
+            "endpoint": "/ai/cai/chat",
+            "timestamp": "Jan 23, 2024, 04:20:52 PM UTC"
+        },
+        {
+            "endpoint": "/ai/cai/chat",
+            "timestamp": "Jan 23, 2024, 04:20:52 PM UTC"
+        },
+        {
+            "endpoint": "/ai/cai/search",
+            "timestamp": "Jan 23, 2024, 04:20:52 PM UTC"
+        },
+        {
+            "endpoint": "/ai/vits/model",
+            "timestamp": "Jan 23, 2024, 04:20:52 PM UTC"
+        },
+        {
+            "endpoint": "/ai/vits",
+            "timestamp": "Jan 23, 2024, 04:20:52 PM UTC"
+        },
+        {
+            "endpoint": "/ai/characterai",
+            "timestamp": "Jan 23, 2024, 04:20:52 PM UTC"
+        },
+        {
+            "endpoint": "/ai/gemini",
+            "timestamp": "Jan 23, 2024, 04:20:52 PM UTC"
+        },
+        {
+            "endpoint": "/ai/bing",
+            "timestamp": "Jan 23, 2024, 04:20:52 PM UTC"
+        },
+        {
+            "endpoint": "/ai/bingimg",
+            "timestamp": "Jan 23, 2024, 04:20:52 PM UTC"
+        },
+        {
+            "endpoint": "/ai/bard",
+            "timestamp": "Jan 23, 2024, 04:20:52 PM UTC"
+        },
+        {
+            "endpoint": "/ai/VoiceGPT",
+            "timestamp": "Jan 23, 2024, 04:20:52 PM UTC"
+        },
+        {
+            "endpoint": "/ai/chatGPT3",
+            "timestamp": "Jan 23, 2024, 04:20:52 PM UTC"
+        },
+        {
+            "endpoint": "/ai/chatGPT3",
+            "timestamp": "Jan 23, 2024, 04:20:52 PM UTC"
+        },
+        {
+            "endpoint": "/ai/azureGPT",
+            "timestamp": "Jan 23, 2024, 04:20:52 PM UTC"
+        },
+        {
+            "endpoint": "/stats",
+            "timestamp": "Jan 23, 2024, 04:20:52 PM UTC"
+        }
+    ]
+}
