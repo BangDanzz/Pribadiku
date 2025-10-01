@@ -5805,7 +5805,7 @@ throw new Error(response.data.message || 'Failed to fetch token');
 }
 };
 
-router.get("/api/ai/toanime", async (req, res) => {
+router.get("/api/ai/toanime", checkApiKeys, async (req, res) => {
     const url = req.query.url;
     if (!url) {
         return res.json({ status: false, message: "Please Enter url Parameters" });
@@ -5819,7 +5819,7 @@ router.get("/api/ai/toanime", async (req, res) => {
         });
     } catch (err) {
         console.error("Generate gagal:", err.message);
-        return res.status(500).json({ status: 500, message: "An internal error occurred", result: "error" }); });
+        return res.status(500).json({ status: 500, message: "An internal error occurred", result: "error" });
     }
 });
 
