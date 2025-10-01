@@ -5645,10 +5645,188 @@ class CaptchaSolver {
   }
 }
 
+const api = {
+uploader: 'https://www.aiease.ai/api/api/id_photo/s',
+genImg2Img: 'https://www.aiease.ai/api/api/gen/img2img',
+gentext2img: 'https://www.aiease.ai/api/api/gen/text2img',
+taskInfo: 'https://www.aiease.ai/api/api/id_photo/task-info',
+styleList: 'https://www.aiease.ai/api/api/common/ai_filter_style',
+token: 'https://www.aiease.ai/api/api/user/visit',
+};
+
+const headers = {
+json: {
+'Content-Type': 'application/json',
+'User-Agent': 'Mozilla/5.0',
+'Authorization': null,
+'Accept': 'application/json'
+},
+image: {
+'Content-Type': 'image/jpeg',
+'User-Agent': 'Mozilla/5.0',
+'Accept': '*/*'
+}
+};
+
+const default_payload = {
+enhance: { gen_type: "enhance", enhance_extra_data: { img_url: null, mode: null, size: "4", restore: 1 } },
+filter: { gen_type: 'ai_filter', ai_filter_extra_data: { img_url: null, style_id: null } },
+watermark: { gen_type: "text_remove", text_remove_extra_data: { img_url: null, mask_url: "" } },
+rembg: { gen_type: "rembg", rembg_extra_data: { img_url: null } },
+retouch: { gen_type: "ai_skin_repair", ai_skin_repair_extra_data: { img_url: null } }
+};
+
+const constants = { maxRetry: 40, retryDelay: 3000 };
+let AUTH_TOKEN = null;
+
+const setupEncryption = () => {
+const encryptionKeyPhrase = "Q@D24=oueV%]OBS8i,%eK=5I|7WU$PeE";
+const hashHex = CryptoJS.SHA256(encryptionKeyPhrase).toString(CryptoJS.enc.Hex);
+const encryptionKey = CryptoJS.enc.Hex.parse(hashHex);
+return {
+useEncrypt: (plainText) => {
+const encodedText = encodeURIComponent(plainText);
+const iv = CryptoJS.lib.WordArray.random(16);
+const encrypted = CryptoJS.AES.encrypt(encodedText, encryptionKey, { iv, mode: CryptoJS.mode.CFB, padding: CryptoJS.pad.NoPadding });
+return CryptoJS.enc.Base64.stringify(iv.concat(encrypted.ciphertext));
+},
+useDecrypt: (base64EncryptedText) => {
+const encryptedBytes = CryptoJS.enc.Base64.parse(base64EncryptedText);
+const iv = CryptoJS.lib.WordArray.create(encryptedBytes.words.slice(0, 4), 16);
+const ciphertext = CryptoJS.lib.WordArray.create(encryptedBytes.words.slice(4), encryptedBytes.sigBytes - 16);
+const decrypted = CryptoJS.AES.decrypt({ ciphertext }, encryptionKey, { iv, mode: CryptoJS.mode.CFB, padding: CryptoJS.pad.NoPadding });
+return decodeURIComponent(decrypted.toString(CryptoJS.enc.Utf8));
+}
+};
+};
+
+const { useEncrypt, useDecrypt } = setupEncryption();
+
+const getFileBuffer = async (input) => {
+    if (Buffer.isBuffer(input)) return input;
+    if (/^data:.*?\/.*?;base64,/i.test(input)) return Buffer.from(input.split(',')[1], 'base64');
+    if (/^https?:\/\//.test(input)) {
+        const res = await axios.get(input, { responseType: 'arraybuffer' });
+        return Buffer.from(res.data);
+    }
+    if (fs.existsSync(input)) return fs.readFileSync(input);
+    return Buffer.alloc(0);
+};
+
+const uploadImage = async (input) => {
+if (!AUTH_TOKEN) await getToken();
+const fileBuffer = await getFileBuffer(input);
+const metadataJsonString = JSON.stringify({ length: fileBuffer.length, filetype: 'image/jpeg', filename: 'image.jpg' });
+const encryptedMetadata = useEncrypt(metadataJsonString);
+const apiUrl = `${api.uploader}?time=${Date.now()}`;
+const response = await axios.post(apiUrl, { t: encryptedMetadata }, { headers: headers.json });
+const uploadUrl = useDecrypt(response.data.result);
+await axios.put(uploadUrl, fileBuffer, { headers: { 'Content-Length': fileBuffer.length, ...headers.image } });
+return uploadUrl.split('?')[0];
+};
+
+const generateImage = async (type, input, { style = 4, mode = 'general' } = {}) => {
+if (!AUTH_TOKEN) await getToken();
+const payload = default_payload[type];
+if (!payload) throw new Error(`Invalid type: ${type}`);
+
+const imgUrl = await uploadImage(input);
+const dataKey = Object.keys(payload).find(key => key.endsWith("_extra_data"));
+if (dataKey) payload[dataKey].img_url = imgUrl;
+
+if (type === 'filter') payload[dataKey].style_id = style;
+else if (type === 'enhance') payload[dataKey].mode = mode;
+
+const response = await axios.post(api.genImg2Img, payload, { headers: headers.json });
+if (response.data && response.data.result && response.data.result.task_id) {
+const taskId = response.data.result.task_id;
+return await checkTaskStatus(taskId);
+} else {
+throw new Error(response.data.message || 'Task ID not found in response');
+}
+};
+
+const text2img = async (prompt, { style = 1, size = '1-1' } = {}) => {
+if (!AUTH_TOKEN) await getToken();
+const payload = {
+gen_type: "art_v1",
+art_v1_extra_data: { prompt, style_id: style, size }
+};
+const response = await axios.post(api.gentext2img, payload, { headers: headers.json });
+if (response.data && response.data.result && response.data.result.task_id) {
+const taskId = response.data.result.task_id;
+return await checkTaskStatus(taskId);
+} else {
+throw new Error(response.data.message || 'Task ID not found in response');
+}
+};
+
+const checkTaskStatus = async (taskId, maxRetry = 40, delay = 3000) => {
+    let attempts = 0;
+    while (attempts < maxRetry) {
+        const res = await axios.get(`${api.taskInfo}?task_id=${taskId}`, { headers: headers.json });
+        const data = res.data.result?.data;
+
+        if (!data) throw new Error("Task data tidak ditemukan");
+
+        const status = data.queue_info?.status;
+
+        if (status === "success") {
+            // Ambil hasil generate
+            if (data.results && data.results.length > 0) {
+                return data.results.map(r => r.origin); // bisa ganti ke thumb jika mau
+            } else {
+                throw new Error("Task selesai tapi hasil kosong");
+            }
+        }
+
+        // status belum selesai, tunggu
+        await new Promise(r => setTimeout(r, delay));
+        attempts++;
+    }
+
+    throw new Error(`Max retry reached for task ${taskId}`);
+};
+
+const getStyle = async () => {
+if (!AUTH_TOKEN) await getToken();
+const response = await axios.get(api.styleList, { headers: headers.json });
+if (response.data.code === 200) return response.data.result;
+throw new Error(response.data.message || 'Failed to fetch style list');
+};
+
+const getToken = async () => {
+const response = await axios.post(api.token, {}, { headers: { 'Content-Type': 'application/json', 'Accept': 'application/json', 'User-Agent': 'Mozilla/5.0' } });
+if (response.data.code === 200) {
+AUTH_TOKEN = `JWT ${response.data.result.user.token}`;
+headers.json.Authorization = AUTH_TOKEN;
+} else {
+throw new Error(response.data.message || 'Failed to fetch token');
+}
+};
+
+router.get("/api/ai/toanime", async (req, res) => {
+    const url = req.query.url;
+    if (!url) {
+        return res.json({ status: false, message: "Please Enter url Parameters" });
+    }
+
+    try {
+        const data = await generateImage("filter", url, { style: 4 });
+        return res.json({
+            status: 200,
+            result: data
+        });
+    } catch (err) {
+        console.error("Generate gagal:", err.message);
+        return res.status(500).json({ status: 500, message: "An internal error occurred", result: "error" }); });
+    }
+});
+
 router.get("/api/tools/bypass", checkApiKeys, async (req, res) => {
   const { sitekey, url } = req.query;
   if (!sitekey || !url) {
-    return res.status(400).json({ error: "Please Enter siteKey & url Parameters" });
+    return res.json({ status: false, message: "Please Enter siteKey & url Parameters" });
   }
 
   try {
@@ -5683,8 +5861,8 @@ router.get("/api/ai/txt2img", checkApiKeys, async (req, res) => {
   try {
     const prompt = req.query.prompt;
     const ratio = req.query.ratio;
-    if (!prompt) return res.status(400).json({ success: false, message: "Please Enter Prompt Parameters" });
-    if (!ratio) return res.status(400).json({ success: false, message: "Please Enter Ratio Parameters" });
+    if (!prompt) return res.json({ success: false, message: "Please Enter Prompt Parameters" });
+    if (!ratio) return res.json({ success: false, message: "Please Enter Ratio Parameters" });
 
     const vertex = new VertexAI();
     const result = await vertex.image({ prompt, aspect_ratio: ratio });
@@ -5708,7 +5886,7 @@ router.get("/api/maker/ml", checkApiKeys, async (req, res) => {
 
   // === cek parameter wajib ===
   if (!profileUrl) {
-    return res.status(400).json({
+    return res.json({
       status: false,
       message: "Please provide 'profileUrl' parameter",
     });
@@ -5729,7 +5907,7 @@ router.get("/api/maker/brat", checkApiKeys, async (req, res) => {
   const { text = "Brat", size = "100", blur = "5" } = req.query;
 
   if (!text) {
-    return res.status(400).json({
+    return res.json({
       status: false,
       message: "Please enter 'text & size & blur' parameter"
     });
@@ -5767,10 +5945,10 @@ router.post("/api/tools/videy", checkApiKeys, uploader.single("file"), async (re
     } else if (req.body.url) {
       // File dari URL
       const response = await fetch(req.body.url);
-      if (!response.ok) return res.status(400).json({ status: false, error: "Failed to fetch URL" });
+      if (!response.ok) return res.json({ status: false, error: "Failed to fetch URL" });
       buffer = Buffer.from(await response.arrayBuffer());
     } else {
-      return res.status(400).json({ status: false, error: "File or URL must be provided" });
+      return res.json({ status: false, error: "File or URL must be provided" });
     }
 
     // Upload ke Videy
