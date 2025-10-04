@@ -18,6 +18,7 @@ const fetch = require('node-fetch');
 const { Readable } = require('stream');
 const bodyParser = require('body-parser');
 const got = require('got');
+const { generateFakeChatIphone } = require("generator-fake");
 
 const router = express.Router();
 const config = require("../config");
@@ -6913,5 +6914,42 @@ router.get('/api/stalk/soundcloud', checkApiKeys, async (req, res, next) => {
               res.status(500).send({ status: 500, message: 'An internal error occurred', result: 'error' })
          }
        });
-       
+
+router.get("/api/maker/iqc", async (req, res) => {
+  const { text, chatTime, statusBarTime } = req.query;
+
+  if (!text || !chatTime || !statusBarTime) {
+    return res.json({
+      status: false,
+      message: "Parameter text, chatTime, dan statusBarTime wajib diisi!",
+    });
+  }
+
+  try {
+    const quoteOptions = {
+      text,
+      chatTime,
+      statusBarTime,
+    };
+
+    const quoteBuffer = await generateFakeChatIphone(quoteOptions);
+
+    if (!quoteBuffer) {
+      return res.status(500).json({
+        status: false,
+        message: "Gagal membuat fake chat",
+      });
+    }
+
+    res.set("Content-Type", "image/png");
+    res.send(quoteBuffer); // langsung kirim gambar
+  } catch (err) {
+    console.error("Error membuat fake chat:", err);
+    res.status(500).json({
+      status: false,
+      message: "Internal server error",
+    });
+  }
+});
+
 module.exports = router;
