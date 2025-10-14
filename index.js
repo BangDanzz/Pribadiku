@@ -69,18 +69,6 @@ app.use((req, res, next) => {
   res.setHeader("Referrer-Policy", "no-referrer-when-downgrade");
   res.setHeader("Permissions-Policy", "geolocation=(), microphone=(), camera=(), payment=()");
 
-  // ✅ Allow external image sources (e.g., ui-avatars.com)
-  res.setHeader(
-    "Content-Security-Policy",
-    "default-src 'self'; " +
-    "script-src 'self' 'unsafe-inline'; " +
-    "style-src 'self' 'unsafe-inline'; " +
-    "img-src 'self' data: https://ui-avatars.com https://iili.io https://i.postimg.cc; " + // tambah domain yang kamu pakai
-    "font-src 'self'; " +
-    "connect-src 'self'; " +
-    "frame-src 'none';"
-  );
-
   next();
 });
 
