@@ -330,9 +330,16 @@
 </div>
 
       <!-- Avatar -->
-      <div class="avatar avatar-online">
-        <img src="<%= user && user.profile ? user.profile : 'https://i.postimg.cc/WzCXhzgC/images-1.jpg' %>" alt="user-image" class="rounded-circle">
-      </div>
+<div class="avatar avatar-online">
+  <img 
+    src="<%= user && user.profile 
+            ? (user.profile.startsWith('https') 
+                ? user.profile 
+                : '/images/' + user.profile) 
+            : '/images/profiles.jpg' %>"
+    alt="user-image"
+    class="rounded-circle">
+</div>
 
     </a>
 
