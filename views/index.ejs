@@ -333,7 +333,7 @@
 <div class="avatar avatar-online">
   <img 
     src="<%= user && user.profile 
-            ? (user.profile.startsWith('https') 
+            ? (user.profile.startsWith('http') 
                 ? user.profile 
                 : '/images/' + user.profile) 
             : '/images/profiles.jpg' %>"
