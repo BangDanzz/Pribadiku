@@ -68,7 +68,18 @@ app.use((req, res, next) => {
   res.setHeader("Strict-Transport-Security", "max-age=31536000; includeSubDomains; preload");
   res.setHeader("Referrer-Policy", "no-referrer-when-downgrade");
   res.setHeader("Permissions-Policy", "geolocation=(), microphone=(), camera=(), payment=()");
-  res.setHeader("Content-Security-Policy", "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src 'none';");
+
+  // ✅ Allow external image sources (e.g., ui-avatars.com)
+  res.setHeader(
+    "Content-Security-Policy",
+    "default-src 'self'; " +
+    "script-src 'self' 'unsafe-inline'; " +
+    "style-src 'self' 'unsafe-inline'; " +
+    "img-src 'self' data: https://ui-avatars.com https://iili.io; " + // tambah domain yang kamu pakai
+    "font-src 'self'; " +
+    "connect-src 'self'; " +
+    "frame-src 'none';"
+  );
 
   next();
 });
