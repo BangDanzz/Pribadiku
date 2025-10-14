@@ -75,7 +75,7 @@ app.use((req, res, next) => {
     "default-src 'self'; " +
     "script-src 'self' 'unsafe-inline'; " +
     "style-src 'self' 'unsafe-inline'; " +
-    "img-src 'self' data: https://ui-avatars.com https://iili.io; " + // tambah domain yang kamu pakai
+    "img-src 'self' data: https://ui-avatars.com https://iili.io https://i.postimg.cc; " + // tambah domain yang kamu pakai
     "font-src 'self'; " +
     "connect-src 'self'; " +
     "frame-src 'none';"
