@@ -319,17 +319,19 @@
     <a class="nav-link dropdown-toggle hide-arrow p-0 d-flex align-items-center" href="javascript:void(0);" data-bs-toggle="dropdown">
 
       <!-- Badge Coin + Limit di kiri avatar dengan tooltip -->
-      <div class="badge-coin d-flex align-items-center justify-content-center me-2"
-           data-bs-toggle="tooltip"
-           data-bs-placement="bottom"
-           title="Limit: <%= user.limit || 0 %>">
-        <span class="iconify" data-icon="mdi:coin" data-width="14" data-height="14"></span>
-        <span class="fw-bold ms-1" style="font-size:0.75rem;"><%= user.limit || 0 %></span>
-      </div>
+<div class="badge-coin d-flex align-items-center justify-content-center me-2"
+     data-bs-toggle="tooltip"
+     data-bs-placement="bottom"
+     title="Limit: <%= user.vip ? 'Unlimited' : (user.limit || 0) %>">
+  <span class="iconify" data-icon="mdi:coin" data-width="14" data-height="14"></span>
+  <span class="fw-bold ms-1" style="font-size:0.75rem;">
+    <%= user.vip ? 'Unlimited' : (user.limit || 0) %>
+  </span>
+</div>
 
       <!-- Avatar -->
       <div class="avatar avatar-online">
-        <img src="<%= user && user.profile ? user.profile : 'https://files.catbox.moe/i3yhs9.jpg' %>" alt="user-image" class="rounded-circle">
+        <img src="<%= user && user.profile ? user.profile : 'https://i.postimg.cc/WzCXhzgC/images-1.jpg' %>" alt="user-image" class="rounded-circle">
       </div>
 
     </a>
@@ -341,7 +343,7 @@
           <div class="d-flex">
             <div class="flex-shrink-0 me-3">
               <div class="avatar avatar-online">
-                <img src="<%= user && user.profile ? user.profile : 'https://files.catbox.moe/i3yhs9.jpg' %>" alt="user-image" class="rounded-circle">
+                <img src="<%= user && user.profile ? user.profile : 'https://i.postimg.cc/WzCXhzgC/images-1.jpg' %>" alt="user-image" class="rounded-circle">
               </div>
             </div>
             <div class="flex-grow-1">
